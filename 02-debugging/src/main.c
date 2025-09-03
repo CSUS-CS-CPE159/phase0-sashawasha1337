@@ -1,13 +1,22 @@
 #include <spede/stdio.h>
-
 /**
  * Returns the length of a NULL terminated string
  * @param str pointer to the string
  * @return value indicating the length of the string
  */
 int strlen(char *str) {
-    //Implement me!
-    return 0;
+    if (!str){
+        printf("NULL pointer!\n");
+        return 0;
+    }
+    int length=0;
+    while(*(str+length)!='\0')
+    {
+        length++;
+    }
+
+
+    return length;
 }
 
 /**
@@ -15,7 +24,7 @@ int strlen(char *str) {
  * @param str pointer to the string to print
  */
 void puts(char *str) {
-    if (str) {
+    if (!str) {
         printf("NULL pointer!\n");
         return;
     }
